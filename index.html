@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>STICHO PESA</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- HEADER -->
+        <header>
+            <div class="brand">
+                <h1>STICHO</h1>
+                <span>PESA</span>
+            </div>
+
+            <p>Know where your money goes.</p>
+        </header>
+
+
+        <!-- MONEY SUMMARY -->
+        <section class="money-card">
+
+            <p>Money left</p>
+
+            <h2 id="moneyLeft">KSh 0</h2>
+            <button class="set-money-btn" id="setMoneyBtn">
+    + Set starting money
+</button>
+
+            <div class="summary">
+                <div>
+                    <span>Today</span>
+                    <strong id="todaySpent">KSh 0</strong>
+                </div>
+
+                <div>
+                    <span>This month</span>
+                    <strong id="monthSpent">KSh 0</strong>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- ADD EXPENSE -->
+        <button class="add-expense" id="addExpenseBtn">
+            ＋ Add Expense
+        </button>
+
+
+        <!-- RECENT EXPENSES -->
+        <section class="expenses">
+
+            <div class="section-title">
+                <h3>Recent expenses</h3>
+            </div>
+
+            <div id="expenseList">
+
+                <div class="empty-state">
+                    <div>💸</div>
+                    <p>No expenses yet.</p>
+                    <small>Start tracking your spending.</small>
+                </div>
+
+            </div>
+
+        </section>
+        <!-- SET MONEY MODAL -->
+
+<div class="modal" id="moneyModal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+            <h2>Set Your Money</h2>
+
+            <button id="closeMoneyModal">✕</button>
+        </div>
+
+        <p class="modal-description">
+            How much money do you currently have?
+        </p>
+
+        <label for="startingMoney">
+            Amount
+        </label>
+
+        <div class="amount-input">
+
+            <span>KSh</span>
+
+            <input
+                type="number"
+                id="startingMoney"
+                placeholder="5000"
+                min="1"
+            >
+
+        </div>
+
+        <button
+            class="save-expense"
+            id="saveMoney"
+        >
+            SAVE BALANCE
+        </button>
+
+    </div>
+
+</div>
+        <!-- ADD EXPENSE MODAL -->
+
+<div class="modal" id="expenseModal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+            <h2>Add Expense</h2>
+
+            <button id="closeModal">✕</button>
+        </div>
+
+
+        <label for="amount">Amount</label>
+
+        <div class="amount-input">
+            <span>KSh</span>
+            <input
+                type="number"
+                id="amount"
+                placeholder="0"
+                min="1"
+            >
+        </div>
+
+
+<label for="category">Category</label>
+
+<select id="category">
+    <option value="Food">🍛 Food</option>
+    <option value="Transport">🚌 Transport</option>
+    <option value="Bundles">📱 Bundles</option>
+    <option value="School">📚 School</option>
+    <option value="Entertainment">🎮 Entertainment</option>
+    <option value="Shopping">🛍️ Shopping</option>
+    <option value="Rent">🏠 Rent</option>
+    <option value="Other">➕ Other / Custom</option>
+</select>
+
+<input
+    type="text"
+    id="customCategory"
+    placeholder="Enter your category"
+    style="display: none;">
+    
+<label for="note">Note (optional)</label>
+
+        <input
+            type="text"
+            id="note"
+            placeholder="e.g. Lunch"
+        >
+
+
+        <button class="save-expense" id="saveExpense">
+            SAVE EXPENSE
+        </button>
+
+    </div>
+
+</div>
+
+
+        <!-- BOTTOM NAVIGATION -->
+        <nav class="bottom-nav">
+
+            <button class="active">
+                🏠
+                <span>Home</span>
+            </button>
+
+            <button>
+                📋
+                <span>History</span>
+            </button>
+
+            <button>
+                📊
+                <span>Insights</span>
+            </button>
+
+        </nav>
+
+    </div>
+
+
+    <script src="app.js"></script>
+
+</body>
+</html>
